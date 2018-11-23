@@ -204,10 +204,10 @@ func (r *StandardRegistry) register(name string, i interface{}) error {
 	if _, ok := r.metrics[name]; ok {
 		return DuplicateMetric(name)
 	}
-	switch i.(type) {
-	case Counter, Gauge, GaugeFloat64, Healthcheck, Histogram, Meter, Timer:
-		r.metrics[name] = i
-	}
+	//switch i.(type) {
+	//case Counter, Gauge, GaugeFloat64, Healthcheck, Histogram, Meter, Timer:
+	r.metrics[name] = i
+	//}
 	return nil
 }
 
